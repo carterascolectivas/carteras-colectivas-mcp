@@ -1,0 +1,96 @@
+{
+  "manifest_version": "0.4",
+  "name": "carteras-colectivas-mcp",
+  "display_name": "Carteras Colectivas",
+  "version": "2.22.2",
+  "description": "Colombian mutual funds (FICs) — performance, risk, fees, and market segmentation across 650+ fund offerings (ofertas de inversión) with 17+ years of history.",
+  "long_description": "Comprehensive access to Fondos de Inversión Colectiva (FICs). Analyze performance with rolling returns and benchmark comparisons, evaluate risk with Sharpe ratios and drawdown analysis, compare fees across fund families, and explore market segmentation by investor type (PN, PJ, Institucional, Especiales). Data sourced from regulatory filings and monthly publications by fund administrators under Superintendencia Financiera de Colombia oversight. All tools are read-only.",
+  "author": {
+    "name": "Carteras Colectivas Profesional",
+    "email": "info@carterascolectivas.co",
+    "url": "https://www.carterascolectivas.co"
+  },
+  "license": "Proprietary",
+  "homepage": "https://www.carterascolectivas.co",
+  "documentation": "https://agents.carterascolectivas.co",
+  "support": "mailto:info@carterascolectivas.co",
+  "icon": "icon.png",
+  "keywords": [
+    "colombian funds",
+    "mutual funds",
+    "FIC",
+    "fondos de inversion",
+    "carteras colectivas",
+    "finance",
+    "risk analysis",
+    "fund comparison",
+    "market segmentation",
+    "aurora mysql",
+    "latin america",
+    "investment analysis"
+  ],
+  "privacy_policies": [
+    "https://www.carterascolectivas.co/legal#privacy-policy"
+  ],
+  "server": {
+    "type": "uv",
+    "entry_point": "CarterasColectivasMCP_bridge.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory", "${__dirname}",
+        "CarterasColectivasMCP_bridge.py"
+      ],
+      "env": {
+        "API_KEY": "${user_config.API_KEY}",
+        "BRIDGE_TYPE": "client"
+      }
+    }
+  },
+  "user_config": {
+    "API_KEY": {
+      "type": "string",
+      "title": "API Key",
+      "description": "Your Carteras Colectivas API key (provided with your subscription)",
+      "required": true,
+      "sensitive": true
+    }
+  },
+  "tools": [
+    { "name": "query_database", "description": "Execute read-only SQL queries on the Colombian mutual funds database" },
+    { "name": "get_schema_info", "description": "Get database schema documentation and quick reference" },
+    { "name": "get_table_info", "description": "Get detailed information about a specific database table" },
+    { "name": "health_check", "description": "Check database connection health" },
+    { "name": "search_funds", "description": "Search mutual funds by name with optional segment filter" },
+    { "name": "list_all_funds", "description": "Return all active funds with ID, name, ticker, category, AUM. For autocomplete/search." },
+    { "name": "analyze_fund_performance", "description": "Comprehensive fund performance analysis with returns and benchmarks" },
+    { "name": "get_fund_overview", "description": "Combined endpoint returning all data for fund overview in a single call: performance, risk, fees, similar funds, and investment simulation." },
+    { "name": "compare_funds", "description": "Side-by-side comparison of multiple funds" },
+    { "name": "generate_investment_chart", "description": "Generate investment growth projection chart" },
+    { "name": "get_risk_metrics", "description": "Get risk metrics including volatility, Sharpe ratio, and drawdown" },
+    { "name": "analyze_fees", "description": "Fee analysis and long-term impact projection" },
+    { "name": "check_data_freshness", "description": "Check how current the database data is" },
+    { "name": "get_fund_attribution", "description": "Performance attribution analysis for a fund" },
+    { "name": "filter_funds", "description": "Filter funds by category, AUM, and other criteria" },
+    { "name": "list_categories", "description": "List all fund categories with fund counts" },
+    { "name": "compare_to_benchmark", "description": "Compare a fund against its category benchmark" },
+    { "name": "get_fund_percentiles", "description": "Get percentile rankings within a fund's category" },
+    { "name": "get_fund_correlations", "description": "Correlation analysis vs benchmark (alpha, beta, R-squared)" },
+    { "name": "get_alpha_ranking", "description": "Rank all funds in a category by alpha and beta" },
+    { "name": "get_diversification_matrix", "description": "Correlation matrix for portfolio diversification analysis" },
+    { "name": "find_similar_funds", "description": "Find funds with similar behavior using correlation analysis" },
+    { "name": "compare_category_funds", "description": "Compare all funds in a category by returns and risk" },
+    { "name": "get_market_segments", "description": "Market segmentation overview by investor type (PN, PJ, Institucional, Especiales)" },
+    { "name": "get_segment_funds", "description": "List funds within a specific investor segment" },
+    { "name": "get_segment_distribution", "description": "Category distribution within an investor segment" },
+    { "name": "match_investor_profile", "description": "Match investor profile to recommended funds by segment and risk tolerance" },
+    { "name": "compare_segment_performance", "description": "Compare performance metrics across all market segments" }
+  ],
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "python": ">=3.11"
+    }
+  }
+}
