@@ -1,6 +1,6 @@
 # Carteras Colectivas — Claude Desktop Extension
 
-> Colombian mutual funds (FICs) — performance, risk, fees, and market segmentation across 650+ fund offerings (ofertas de inversión) with 17+ years of history.
+> Colombian mutual funds (FICs) — performance, risk, fees, and market segmentation across 650+ fund offerings (ofertas de inversión) with up to 17+ years of history.
 
 This repository contains the source for the **Carteras Colectivas** Claude Desktop Extension (`.mcpb` bundle). The extension provides AI-assisted analysis of Colombian Fondos de Inversión Colectiva (FICs) directly inside Claude Desktop.
 

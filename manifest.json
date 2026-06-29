@@ -2,8 +2,8 @@
   "manifest_version": "0.4",
   "name": "carteras-colectivas-mcp",
   "display_name": "Carteras Colectivas",
-  "version": "2.22.2",
-  "description": "Colombian mutual funds (FICs) — performance, risk, fees, and market segmentation across 650+ fund offerings (ofertas de inversión) with 17+ years of history.",
+  "version": "2.22.3",
+  "description": "Colombian mutual funds (FICs) — performance, risk, fees, and market segmentation across 650+ fund offerings (ofertas de inversión) with up to 17+ years of history.",
   "long_description": "Comprehensive access to Fondos de Inversión Colectiva (FICs). Analyze performance with rolling returns and benchmark comparisons, evaluate risk with Sharpe ratios and drawdown analysis, compare fees across fund families, and explore market segmentation by investor type (PN, PJ, Institucional, Especiales). Data sourced from regulatory filings and monthly publications by fund administrators under Superintendencia Financiera de Colombia oversight. All tools are read-only.",
   "author": {
     "name": "Carteras Colectivas Profesional",
